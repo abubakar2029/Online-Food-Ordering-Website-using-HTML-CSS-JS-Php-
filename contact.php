@@ -24,7 +24,7 @@ $pageTitle = 'Contact';
 $pageHeading = 'Contact Us'
 
 ?>
-
+<?php include 'components/header.php' ?>
 <body>
     <main>
 
@@ -52,5 +52,6 @@ $pageHeading = 'Contact Us'
 </p>
   </form>
     </main>
+    <?php include 'components/footer.php'; ?>
 </body>
 </html>
