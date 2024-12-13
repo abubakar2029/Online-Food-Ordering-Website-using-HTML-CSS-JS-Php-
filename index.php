@@ -6,8 +6,10 @@
     <title>Online Food App</title>
 </head>
 <body>
-    <?php include 'components/header.php' ?>
-    <h1>Welcom to the shop!</h1>
-    <?php include 'components/footer.php'; ?>
+    <?php include 'components/header.php'?>
+    <h1>Welcome to the shop!</h1>
+
+    <?php include 'components/footer.php';?>
+    <?php include 'components/productCard.php';?>
 </body>
 </html>

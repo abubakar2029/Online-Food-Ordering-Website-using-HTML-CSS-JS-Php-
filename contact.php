@@ -25,7 +25,7 @@ $pageHeading = 'Contact Us'
 
 ?>
 <?php include 'components/header.php' ?>
-<body>
+<body>  
     <main>
 
 <!-- Success or Error Section -->
