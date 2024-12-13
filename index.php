@@ -10,6 +10,12 @@
     <h1>Welcome to the shop!</h1>
 
     <?php include 'components/footer.php';?>
-    <?php include 'components/productCard.php';?>
+
+    <div>
+        <?php
+        include 'components/menu.php';
+        ?>
+
+    </div>
 </body>
 </html>
