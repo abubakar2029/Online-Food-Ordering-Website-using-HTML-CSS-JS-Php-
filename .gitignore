@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PHP specific
+/vendor/
+composer.lock
+
+# XAMPP and local environment files
+*.log
+*.env
+*.env.local
+*.env.development
+*.env.production
+*.env.testing
+.DS_Store
+
+# Tailwind output
+output.css
+output.css.map
+
+# Logs and debugging
+*.log
+debug.log
+*.cache
+
+# System files
+Thumbs.db
+*.bak
+*.swp
+*.tmp
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+desktop.ini
