@@ -15,10 +15,16 @@
           <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="about_us.php">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="booking.php">Booking</a>
+          <!-- <a class="nav-link disabled" href="booking.php">Booking</a> -->
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <a class="nav-link" href="orders.php">All Orders</a>
+            <?php endif; ?>
         </li>
       </ul>
 

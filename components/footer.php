@@ -1,8 +1,8 @@
 <footer class="bg-dark text-white py-5">
-  <div class="container pt-0">
-    <div class="row align-items-center">
+  <div class="pt-0">
+    <div class="row align-items-center d-flex justify-content-between">
       <!-- Contact Info -->
-      <div class="col-12 col-md-6 text-center text-md-left mb-4 mb-md-0">
+      <div class="col-12 col-md-6 text-center text-md-left mb-4 mb-md-0 d-flex flex-column">
         <h5 class="mb-3">Contact Us</h5>
         <p class="mb-1">
           <strong>Email:</strong>
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Bottom Line -->
-    <div class="mt-4 text-center border-top pt-3">
+    <div class="w-full mt-4 text-center border-top pt-3">
       <p class="text-sm mb-0">&copy; 2024 AbuBakar and Badar. All rights reserved.</p>
     </div>
   </div>

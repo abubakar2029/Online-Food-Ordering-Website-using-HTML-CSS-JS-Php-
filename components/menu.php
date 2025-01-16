@@ -16,7 +16,7 @@
               $productPrice       = htmlspecialchars($row['price']);
 
               echo "
-              <div class=\"col-12 col-sm-6 col-md-4 col-lg-3\">
+              <div class=\"col-12 col-sm-6 col-md-4 col-lg-3\" id=\"menu\">
                   <div class=\"card h-100 shadow-sm border-0\">
                       <img src=\"$productImage\" class=\"card-img-top rounded-top\" alt=\"$productName\" style=\"height: 200px; object-fit: cover;\">
                       <div class=\"card-body d-flex flex-column\">
