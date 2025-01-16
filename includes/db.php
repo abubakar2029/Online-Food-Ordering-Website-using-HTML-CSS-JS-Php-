@@ -23,7 +23,5 @@ function get_menu($pdo)
     $stmt->execute();
 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data);
-    echo "====================";
     return $data;
 }

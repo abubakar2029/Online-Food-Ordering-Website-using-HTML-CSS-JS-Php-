@@ -1,4 +1,5 @@
 <?php
+session_start();
     include "includes/head.php";
 ?>
 
@@ -24,6 +25,8 @@
             $check_user->execute([$user_email, $user_password]);
 
             if ($check_user->rowCount() == 1) {
+                $_SESSION['user_id']="";
+                $_SESSION['user_id']=$user_email;
                 $success_message = "Login successful! Redirecting...";
                 header("refresh:1; url=index.php");
             } else {

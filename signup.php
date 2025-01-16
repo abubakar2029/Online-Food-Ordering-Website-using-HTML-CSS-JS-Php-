@@ -1,4 +1,6 @@
-<?php include "includes/head.php"?>
+<?php
+    session_start();
+include "includes/head.php"?>
 <?php
     // database connection file
     include 'includes/db.php';
