@@ -4,6 +4,7 @@
     <!-- Hello World with background color -->
     <h1 class="bg-primary text-white">Hello World</h1>
     
+    <?php include "components/heroSection.php"?>
     <?php include "components/menu.php"?>
     <!-- Container with centered text -->
     <div class="container">

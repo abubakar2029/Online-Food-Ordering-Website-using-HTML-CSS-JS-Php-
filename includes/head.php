@@ -6,6 +6,7 @@
     <title>Food App</title>
    <!-- Link to Bootstrap CSS -->
    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link rel="stylesheet" href="app.css">
 </head>
 </html
 <?php
