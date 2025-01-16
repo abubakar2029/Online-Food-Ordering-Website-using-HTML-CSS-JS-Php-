@@ -1,5 +1,5 @@
 <footer class="bg-dark text-white py-5">
-  <div class="container">
+  <div class="">
     <div class="row">
       <!-- Contact Info -->
       <div class="col-12 col-md-4 text-center text-md-left">
