@@ -1,54 +1,40 @@
+<div class="container my-5">
+  <?php
+  // Including database connection file
+  include 'includes/db.php';
 
-<div>
+  $pdo = connect_db();
+  $food_items = get_menu($pdo);
 
-<?php
-// including database connection file
-include 'connection/db.php';
+  // Display products
+  if ($food_items) {
+      echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">';
+      foreach ($food_items as $row) {
 
-// fetching all products data
-$sql = "SELECT * FROM products";
-$result = mysqli_query($db, $sql);
+          $productImage = htmlspecialchars($row['image_url']);
+          $productName = htmlspecialchars($row['name']);
+          $productDescription = htmlspecialchars($row['description']);
+          $productPrice = htmlspecialchars($row['price']);
 
-// if there are products, display them
-if (mysqli_num_rows($result) > 0) {
-
-    // iterating over the result
-    while ($row = mysqli_fetch_assoc($result)) {
-        $productImage = htmlspecialchars($row['product_image']);
-        $productName = htmlspecialchars($row['product_name']);
-        $productDescription = htmlspecialchars($row['product_description']);
-        $productPrice = htmlspecialchars($row['product_price']);
-
-        echo "
-        <div>
-            <!-- product_image -->
-            <img src=\"$productImage\" alt=\"$productName\">
-            <div>
-                <!-- product_name -->
-                <p class=\"product-name\">$productName</p>
-                <!-- product_description -->
-                <p class=\"product-description\">$productDescription</p>
-                <!-- footer of card -->
-                <div>
-                    <!-- product_price -->
-                    <p class=\"product-price\">\$$productPrice</p>
-                    <!-- add_to_cart -->
-                    <span>
-                        <img src=\"images/logos/add_to_cart.png\" alt=\"Add to cart icon\" width=\"25px\">
-                        <button>Add to Cart</button>
-                    </span>
-                </div>
-            </div>
-        </div>";
-    }
-
-} else {
-    echo "<p><i>Loading the products</i></p>";
-}
-
-// closing database connection
-mysqli_close($db);
-?>
-
-
+          echo "
+              <div class=\"col\">
+                  <div class=\"card border-success\">
+                      <img src=\"$productImage\" class=\"card-img-top\" alt=\"$productName\" style=\"height: 200px; object-fit: cover;\">
+                      <div class=\"card-body\">
+                          <h5 class=\"card-title text-truncate\">$productName</h5>
+                          <p class=\"card-text text-muted\">$productDescription</p>
+                          <div class=\"d-flex justify-content-between align-items-center\">
+                              <p class=\"card-text font-weight-bold\">\$$productPrice</p>
+                              <button class=\"btn btn-primary btn-sm\"><i class=\"fas fa-cart-plus\"></i> Add to Cart</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          ";
+      }
+      echo '</div>';
+  } else {
+      echo "<p><i>Loading the products...</i></p>";
+  }
+  ?>
 </div>

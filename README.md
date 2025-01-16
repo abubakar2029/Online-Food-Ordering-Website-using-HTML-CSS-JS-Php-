@@ -1,1 +1,3 @@
-"# Online-Food-Ordering-Website-using-HTML-CSS-JS-Php-" 
+Project Structure
+Home Page -> index.php
+Other pages are same as file names
