@@ -58,6 +58,15 @@ include "includes/head.php"?>
 
                         if ($result) {
                             $success_message = "Account created successfully!";
+
+                            // Get the user ID after insertion
+                            $user_id = $pdo->lastInsertId();
+
+                            // Store user data in session
+                            $_SESSION['user_id']        = $user_id;
+                            $_SESSION['user_name']      = $user_name;
+                            $_SESSION['user_email']     = $user_email;
+                            $_SESSION['user_image_url'] = $user_image_url;
                         } else {
                             $error_message = "Something went wrong. Please try again!";
                         }
