@@ -1,14 +1,13 @@
 <?php
+session_start();
     include "includes/head.php";
 ?>
 
 <body>
-    <!-- Navbar -->
-    <?php include "components/navbar.php"; ?>
 
     <!-- Logo at the Top -->
-    <div class="text-center py-4">
-        <img src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Tom Foods Logo" height="80">
+    <div class="text-center pt-4">
+        <img src="images/logo.webp" alt="Tom Foods Logo" height="80">
     </div>
 
     <!-- About Us Section -->
@@ -21,7 +20,7 @@
         <div class="row align-items-center">
             <!-- Left: Image -->
             <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Delicious Food" class="img-fluid rounded shadow">
+                <img src="images/about.jpeg" alt="Delicious Food" class="img-fluid rounded shadow">
             </div>
 
             <!-- Right: Content -->
@@ -40,7 +39,7 @@
                     <li><i class="fas fa-check-circle text-success me-2"></i>Exceptional customer service</li>
                 </ul>
 
-                <a href="menu.php" class="btn btn-primary mt-3">Explore Our Menu</a>
+                <a href="index.php" class="btn btn-primary mt-3">Explore Our Menu</a>
             </div>
         </div>
     </section>

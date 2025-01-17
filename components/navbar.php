@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand fw-bold fs-4" href="#">
+    <a class="navbar-brand fw-bold fs-4" href="index.php">
       <img src="/images/logo.webp" alt="Logo" height="40" class="me-2">
       Tom Foods
     </a>

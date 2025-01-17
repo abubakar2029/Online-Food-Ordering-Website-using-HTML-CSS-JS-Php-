@@ -18,20 +18,23 @@
 
         if (empty($user_email) || empty($user_password)) {
             $error_message = "Email and Password are required!";
-        } elseif (! filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
             $error_message = "Invalid email format!";
         } else {
             $check_user = $pdo->prepare("SELECT * FROM users WHERE user_email = ? AND user_password = ?");
             $check_user->execute([$user_email, $user_password]);
 
             if ($check_user->rowCount() == 1) {
+                $user = $check_user->fetch(PDO::FETCH_ASSOC);
+
                 $_SESSION['user_id']        = $user['user_id'];
                 $_SESSION['user_name']      = $user['user_name'];
-                $_SESSION['user_id']        = $user_email;
+                $_SESSION['user_email']     = $user_email;
                 $_SESSION['user_image_url'] = $user['user_image_url'];
 
                 $success_message = "Login successful! Redirecting...";
                 header("refresh:1; url=index.php");
+                exit();
             } else {
                 $error_message = "Invalid email or password!";
             }
@@ -39,9 +42,9 @@
     }
 ?>
 <main class="shadow-sm mx-auto rounded w-75 p-4">
-    <?php if (! empty($error_message)): ?>
+    <?php if (!empty($error_message)): ?>
         <div class="alert alert-danger text-center"><?php echo $error_message; ?></div>
-    <?php elseif (! empty($success_message)): ?>
+    <?php elseif (!empty($success_message)): ?>
         <div class="alert alert-success text-center"><?php echo $success_message; ?></div>
     <?php endif; ?>
 
@@ -53,12 +56,12 @@
     <form action="" method="POST" class="space-y-4">
         <div class="form-group">
             <label for="user_email" class="form-label small text-muted">Email</label>
-            <input type="email" name="user_email" id="user_email" value="<?php echo htmlspecialchars($user_email); ?>
+            <input type="email" name="user_email" id="user_email" value="<?php echo htmlspecialchars($user_email); ?>"
                 class="form-control mt-1" required>
         </div>
         <div class="form-group">
             <label for="user_password" class="form-label small text-muted">Password</label>
-            <input type="password" name="user_password" id="user_password" value="<?php echo htmlspecialchars($user_password); ?>
+            <input type="password" name="user_password" id="user_password" value="<?php echo htmlspecialchars($user_password); ?>"
                 class="form-control mt-1" required>
         </div>
         <div class="form-group">

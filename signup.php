@@ -66,7 +66,10 @@ include "includes/head.php"?>
                             $_SESSION['user_id']        = $user_id;
                             $_SESSION['user_name']      = $user_name;
                             $_SESSION['user_email']     = $user_email;
-                            $_SESSION['user_image_url'] = $user_image_url;
+                            $_SESSION['user_image_url'] = $target_file;
+
+                            header("refresh:1; url=index.php");
+
                         } else {
                             $error_message = "Something went wrong. Please try again!";
                         }

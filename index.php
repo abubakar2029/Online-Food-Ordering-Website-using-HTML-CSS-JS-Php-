@@ -1,4 +1,6 @@
-<?php include "includes/head.php"?>
+<?php
+    session_start();
+include "includes/head.php"?>
 <body>
 
     <?php include "components/heroSection.php"?>
